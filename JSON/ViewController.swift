@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        Weather.forecast(withLocation: "37.8267,-122.4233") { (results:[Weather]) in
+            for result in results {
+                print("\(result)\n\n")
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
